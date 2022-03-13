@@ -143,18 +143,26 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+    const likedContainer = document.getElementById( "liked" );
+    likedContainer.innerHTML = `
+         <h1>Liked posts</h1>
+    `;
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "liked" ).appendChild(div);
+        likedContainer.appendChild(div);
     });
 };
 
 const displayReportedPosts = () => {
+    const reportedContainer = document.getElementById( "reported" );
+    reportedContainer.innerHTML = `
+    <h1>Reported posts</h1>
+`;
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
+    reportedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
+        reportedContainer.appendChild(div);
     });
 };
 
